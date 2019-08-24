@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TestPractice.Models.EmployeeData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BIRTHDATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LASTNAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FIRSTNAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PHONE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BIRTHDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LASTNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIRSTNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EMPID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EMPID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EMPID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
