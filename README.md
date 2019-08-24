@@ -1,2 +1,2 @@
 # TestPractice
-A CRUD using ASP.NET Core and MVC for Practic.
+A CRUD using ASP.NET Core and MVC for Practice.
